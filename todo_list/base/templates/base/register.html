@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<div class="header-bar">
+    <h1>Register</h1>
+</div>
+
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label>{{form.username.label}}</label>
+        {{form.username}}
+        <label>{{form.password1.label}}</label>
+        {{form.password1}}
+        <label>{{form.password2.label}}</label>
+        {{form.password2}}
+        <input class="button" type="submit" value="Register" style="margin-top: 10px;">
+    </form>
+    <p>Already have an account? <a href="{% url 'tasks:login' %}" style="color: rgb(169, 162, 162);">Login</a></p>
+</div>
+
+{% endblock content %}
